@@ -51,7 +51,7 @@ export default function Home() {
       return () => {
           window.removeEventListener('resize', handleWindowSizeChange);
       }
-  }, []);
+  });
 
   const isMobile = width <= 768;
   return (
