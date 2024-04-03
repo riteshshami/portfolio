@@ -41,7 +41,7 @@ import {
 
 
 export default function Home() {
-  const [width, setWidth] = useState<number>(window.innerWidth);
+  const [width, setWidth] = useState<number>( typeof window !== 'undefined' ? window.innerWidth : 1024 );
 
   function handleWindowSizeChange() {
       setWidth(window.innerWidth);
@@ -65,7 +65,7 @@ export default function Home() {
         {/* Introduction */}
         <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
           <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Hi! <br /> I'm Ritesh <br /> Web Developer
+            Hi! <br /> I am <span className="bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 to-[#FFB703] bg-opacity-50">Ritesh</span> <br /> Web Developer
           </h1>
           <div className="h-[10rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             <div className="w-[40rem] h-40 relative">
@@ -92,20 +92,20 @@ export default function Home() {
         </div>
 
         {/* About Me */}
-        <div className="mx-auto mt-7 flex flex-col gap-5 bg-gradient-to-b from-[#000000] to-[#2D20C3] py-10 px-60 rounded-b-3xl">
+        <div className="mx-auto mt-7 flex flex-col gap-5 lg:bg-gradient-to-b lg:from-[#000000] lg:to-[#2D20C3] lg:py-10 lg:px-60 lg:rounded-b-3xl">
           <div>
-            <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">About Me</h2>
+            <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">About <span className="bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 to-[#FFB703] bg-opacity-50">Me</span></h2>
           </div>
           <div className="flex lg:flex-row md:flex-col gap-28 justify-between">
             <div>
-              <p className="text-neutral-500 max-w-lg mx-auto my-20 text-lg text-left relative z-10">
-                  🚀 Hello, I'm Ritesh, an Electrical Engineering graduate passionate about web development. 
+              <p className="text-neutral-500 max-w-lg mx-auto my-20 lg:text-lg md:text-base text-left relative z-10">
+                  🚀 Hello, I am Ritesh, an Electrical Engineering graduate passionate about web development. 
                   With expertise in HTML5, CSS3, and JavaScript, I specialize in the MERN stack and have created multiple projects using that technology. 
-                  I excel in problem solving, continually learning and solving challenges on GitHub and LeetCode. Let's collaborate and innovate in the exciting world of web development! 🌟
+                  I excel in problem solving, continually learning and solving challenges on GitHub and LeetCode. Let us collaborate and innovate in the exciting world of web development! 🌟
               </p>
             </div>
             <div>
-              <Image src="/profile.png" alt="Hero" width={350} height={350} className="object-cover h-auto" />
+              <Image src="/heroIMAGE.png" alt="Hero" width={500} height={500} className="object-cover h-auto lg:translate-y-6" />
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function Home() {
         {/* Tech Stack */}
         <div className="mx-auto mt-14 flex flex-col gap-5">
           <div>
-            <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Tech Stack</h2>
+            <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"><span className="bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 to-[#FFB703] bg-opacity-50">Tech</span> Stack</h2>
           </div>
           <div className="m-10">
           <Carousel>
@@ -168,7 +168,7 @@ export default function Home() {
         </div>
 
         {/* Projects */}
-        <div className="mx-auto mt-16 flex flex-col gap-10 bg-gradient-to-b from-[#2D20C3] to-[#000000] py-10 px-[450px] rounded-t-3xl">
+        <div className="mx-auto mt-16 flex flex-col gap-10 lg:bg-gradient-to-b lg:from-[#2D20C3] lg:to-[#000000] lg:py-10 lg:px-[450px] lg:rounded-t-3xl">
             <div>
               <h2 className="text-4xl md:text-7xl mx-5 mt-2 mb-0 font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Projects</h2>
             </div>
@@ -316,7 +316,7 @@ export default function Home() {
         </div>
 
         {/* Connect Me */}
-        <div className="flex flex-row items-center bg-[#FFB703] text-[#2D20C3] rounded-[40px] mt-10">
+        <div className="flex flex-row items-center font-semibold bg-[#FFB703] text-[#2D20C3] rounded-[40px] mt-10">
           <div className="px-6 py-4 rounded-lg">
             <Sheet>
               <SheetTrigger>Contact Me</SheetTrigger>
@@ -324,11 +324,11 @@ export default function Home() {
                 <SheetHeader>
                   <SheetTitle>Contact Me</SheetTitle>
                   <SheetDescription>
-                    <div className="text-xl font-semibold">E-Mail: riteshshami@gmail.com</div>
+                    <div className="text-xl font-semibold"><a href="mailto:riteshshami@gmail.com">Email: riteshshami@gmail.com</a></div>
                   </SheetDescription>
                   <Separator />
                   <SheetDescription>
-                  <div className="text-xl font-semibold">Phone No: +91 9557540607</div>
+                  <div className="text-xl font-semibold"><a href="tel:9557540607">Phone No.: +91 9557540607</a></div>
                   </SheetDescription>
                   <Separator />
                   <SheetDescription>
